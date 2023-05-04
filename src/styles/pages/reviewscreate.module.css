@@ -1,0 +1,49 @@
+.ReviewsCreationPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    transition: 0.2s;
+    opacity: 1;
+}
+
+.ReviewsCreationPage h1 {
+    font-size: 100px;
+    font-weight: bold;
+    margin-top: 120px;
+}
+
+.ReviewsCreationPage form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
+
+.fadeOut {
+    opacity: 0;
+}
+
+.ratingInput {
+    width: 600px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ratingInput input {
+    margin-top: 20px;
+    width: 50%;
+}
+
+.ratingInput label {
+    font-size: 2.5em;
+}
+
+.ratingStars {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0 0;
+}

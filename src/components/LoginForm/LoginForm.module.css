@@ -1,0 +1,106 @@
+.loginForm input {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5em;
+    text-align: center;
+    border: 2.5px solid black;
+    border-radius: 40px;
+    width: 607px;
+    height: 85px;
+    margin-top: 60px;
+}
+
+.loginForm button {
+    display: block;
+    margin: 40px auto;
+    background-color: var(--japan-red);
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+    width: 198px;
+    height: 94px;
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.loginForm button:hover {
+    transform: scale(1.1);
+}
+
+.password {
+    position: relative;
+}
+
+.pwdLogo {
+    cursor: pointer;
+    position: absolute;
+    bottom: 20%;
+    right: 5%;
+}
+
+.signupLink {
+    text-decoration: underline;
+    text-decoration-color: var(--japan-red);
+    text-underline-offset: 3px;
+    color: var(--japan-red);
+    font-size: 20px;
+    margin-top: 30px;
+    transition: 0.3s;
+}
+
+.signupLink:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 1024px) {
+    .loginForm input {
+        width: 90%;
+        max-width: 500px;
+    }
+
+    .loginForm button {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .loginForm input {
+        font-size: 1.8em;
+        height: 70px;
+        margin-top: 30px;
+    }
+
+    .loginForm button {
+        font-size: 1.8em;
+        height: 70px;
+        margin: 30px auto;
+        width: 80%;
+    }
+
+    .pwdLogo {
+        bottom: 25%;
+    }
+}
+
+@media (max-width: 480px) {
+    .loginForm input {
+        font-size: 1.6em;
+        height: 60px;
+        margin-top: 20px;
+        border-radius: 30px;
+    }
+
+    .loginForm button {
+        font-size: 1.6em;
+        height: 60px;
+        margin: 20px auto;
+        width: 90%;
+        border-radius: 30px;
+    }
+
+    .signupLink {
+        font-size: 16px;
+        margin-top: 20px;
+    }
+}

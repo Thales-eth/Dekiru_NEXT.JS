@@ -1,0 +1,207 @@
+.flexContainer {
+    display: flex;
+}
+
+.navBar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: bold;
+    padding-top: 60px;
+}
+
+.navList li {
+    margin-left: 26px;
+    font-size: 24px;
+}
+
+.navList a {
+    transition: 0.3s;
+    position: relative;
+    display: inline-block;
+}
+
+.navList a:hover {
+    color: var(--japan-red);
+}
+
+.navList a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background-color: var(--japan-red);
+    transition: width 0.3s ease;
+}
+
+.navList a:hover::after {
+    width: 100%;
+}
+
+.navList .active {
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-decoration-color: var(--japan-red);
+    text-underline-offset: 7px;
+}
+
+.logo {
+    font-size: 64px;
+    color: var(--japan-red);
+}
+
+.logo a {
+    font-size: 64px;
+    color: var(--japan-red);
+}
+
+.authButtons {
+    display: flex;
+}
+
+.genericButton {
+    display: block;
+    border-radius: 20px;
+    padding: 12px 23px;
+    color: white;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.signupButton {
+    background-color: var(--japan-red);
+    margin-right: 10px;
+}
+
+.loginButton {
+    background-color: black;
+    margin-right: 12px;
+}
+
+.genericButton:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 1200px) {
+    .navList li {
+        margin-left: 15px;
+        margin-right: 15px;
+        font-size: 20px;
+    }
+
+    .logo {
+        font-size: 50px;
+    }
+
+    .genericButton {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 980px) {
+
+    .navList {
+        margin-top: 20px;
+    }
+
+    .navList li {
+        margin-left: 10px;
+        font-size: 18px;
+    }
+
+    .logo {
+        font-size: 48px;
+    }
+
+    .authButtons {
+        margin-top: 20px;
+    }
+
+    .genericButton {
+        padding: 8px 15px;
+        font-size: 16px;
+        border-radius: 10px;
+    }
+
+    .navList a {
+        display: block;
+        padding: 10px 0;
+    }
+
+    .navBar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 20px;
+    }
+
+    .navList li:first-child {
+        margin-left: 0;
+    }
+
+    .navList .active {
+        text-decoration: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .navBar {
+        padding-top: 10px;
+    }
+
+    .navList li {
+        margin-left: 0;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+
+    .logo {
+        font-size: 32px;
+    }
+
+    .authButtons {
+        margin-top: 10px;
+    }
+
+    .genericButton {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+
+    .menuButton {
+        display: block;
+        margin-left: auto;
+        font-size: 28px;
+        cursor: pointer;
+    }
+
+    .navList.active {
+        display: block;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+    }
+
+    .navList.active li {
+        margin-bottom: 15px;
+    }
+
+    .navList.active a {
+        padding: 0;
+    }
+
+    .navList.active .active {
+        text-decoration: none;
+    }
+}

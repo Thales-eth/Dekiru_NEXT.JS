@@ -1,0 +1,80 @@
+.postCard {
+    position: relative;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 50%;
+    max-width: 500px;
+    height: 220px;
+    padding: 30px;
+    margin: 25px;
+    background: black;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.postCard:hover {
+    box-shadow: -10px 10px var(--japan-red);
+    transform: scale(1.1);
+}
+
+.personDetails img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.info {
+    width: 60%;
+}
+
+.info p {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.info .description {
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.interests {
+    display: flex;
+    margin-top: 16px;
+}
+
+.interest {
+    background: #C9C9C9;
+    padding: 10px;
+    cursor: pointer;
+    margin-right: 5px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 30px;
+}
+
+.personDetails {
+    margin-left: 27px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+.personDetails p {
+    margin-top: 2px;
+}
+
+.editBtn {
+    position: absolute;
+    cursor: pointer;
+    top: 20px;
+    left: 40px;
+}

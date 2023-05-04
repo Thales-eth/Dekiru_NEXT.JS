@@ -1,0 +1,181 @@
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.hero p {
+    font-size: 36px;
+    margin-top: 48px;
+    position: relative;
+}
+
+.hero h2 {
+    font-size: 96px;
+    font-weight: bold;
+    transition: 0.3s;
+    text-align: center;
+    margin-top: 130px;
+    line-height: 1.5em;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    position: relative;
+}
+
+.text {
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.hero .japanese {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.hero:hover .spanish {
+    opacity: 0;
+}
+
+.hero:hover .japanese {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mainButtons {
+    margin-top: 70px;
+    display: flex;
+    position: relative;
+    text-align: center;
+}
+
+.japanButton {
+    font-weight: bold;
+    font-size: 32px;
+    color: var(--japan-red);
+    border: 3px solid var(--japan-red);
+    border-radius: 40px;
+    padding: 25px 30px;
+    margin-right: 34px;
+    transition: 0.3s;
+}
+
+.japanButton:hover {
+    background-color: var(--japan-red);
+    color: white;
+}
+
+.blackButton {
+    font-weight: bold;
+    font-size: 32px;
+    border: 3px solid black;
+    border-radius: 40px;
+    padding: 25px 30px;
+    transition: 0.3s;
+}
+
+.blackButton:hover {
+    background-color: black;
+    color: white;
+}
+
+@media only screen and (max-width: 1200px) {
+    .hero {
+        margin-top: 50px;
+    }
+
+    .hero p {
+        font-size: 28px;
+        margin-top: 30px;
+    }
+
+    .hero h2 {
+        font-size: 64px;
+        margin-top: 60px;
+        line-height: 1.2em;
+    }
+
+    .japanButton {
+        font-size: 24px;
+        padding: 20px 25px;
+        margin-right: 20px;
+    }
+
+    .blackButton {
+        font-size: 24px;
+        padding: 20px 25px;
+    }
+}
+
+@media only screen and (max-width: 980px) {
+    .hero {
+        margin-top: 30px;
+    }
+
+    .hero p {
+        font-size: 20px;
+        margin-top: 35px;
+    }
+
+    .hero h2 {
+        font-size: 48px;
+        margin-top: 40px;
+        line-height: 1.2em;
+    }
+
+    .mainButtons {
+        margin-top: 40px;
+    }
+
+    .japanButton {
+        font-size: 20px;
+        padding: 15px 20px;
+        margin-right: 10px;
+    }
+
+    .blackButton {
+        font-size: 20px;
+        padding: 15px 20px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .hero {
+        margin-top: 20px;
+    }
+
+    .hero p {
+        font-size: 16px;
+        margin-top: 25px;
+    }
+
+    .hero h2 {
+        font-size: 32px;
+        margin-top: 30px;
+        line-height: 1.2em;
+    }
+
+    .mainButtons {
+        margin-top: 30px;
+    }
+
+    .japanButton {
+        font-size: 16px;
+        padding: 8px 12px;
+        margin-right: 10px;
+        margin-bottom: 20px;
+    }
+
+    .blackButton {
+        font-size: 16px;
+        padding: 8px 12px;
+        margin-bottom: 20px;
+    }
+}

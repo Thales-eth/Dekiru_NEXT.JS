@@ -1,0 +1,95 @@
+import styles from '@/styles/pages/match.module.css'
+import Loader from '@/components/Loader/Loader'
+import userService from '@/services/user.service'
+import UserArticle from '@/components/UserArticle/UserArticle'
+import Link from 'next/link'
+import { NO_MATCH_MSG } from '@/consts'
+import { AuthContext } from '@/contexts/auth.context'
+import { useContext, useEffect, useState } from 'react'
+import IsPrivate from '@/components/IsPrivate/IsPrivate'
+
+const MatchPage = () => {
+
+    const [canShow, setCanShow] = useState(false)
+    const [hasError, setHasError] = useState(false)
+    const [isRevealed, setIsRevealed] = useState(false)
+    const [match, setMatch] = useState(null)
+    const { user } = useContext(AuthContext)
+
+    const numbers = []
+    for (let i = 0; i < 40; i++) numbers.push(i)
+
+    useEffect(() => {
+        if (user._id) {
+            loadMatchUser()
+        }
+    }, [])
+
+    async function loadMatchUser() {
+        const matchUser = await userService.getMatch(user._id).then(({ data }) => data)
+        setCanShow(true)
+        if (matchUser && !match) {
+            setMatch(matchUser)
+        }
+        else {
+            setHasError(true)
+        }
+    }
+
+    function handleReveal() {
+        setIsRevealed(true)
+    }
+
+    return (
+        <div className={styles.matchPage}>
+            {
+                !isRevealed ?
+                    < div className={styles.confettiContainer}>
+                        {
+                            !canShow ?
+                                <Loader />
+                                :
+                                !hasError
+                                    ?
+                                    <div className={styles.matchReveal}>
+                                        <h1>It's a Match!</h1>
+                                        <button onClick={handleReveal}>Reveal Match</button>
+                                        {
+                                            numbers.map(number => {
+                                                const randomLeft = Math.floor(Math.random() * 100) + 1
+                                                const randomTop = Math.floor(Math.random() * 100) + 1
+                                                const style = { left: `${randomLeft}%`, top: `${randomTop}%` }
+
+                                                return (
+                                                    <div key={number} style={style} className={styles.confetti}></div>
+                                                )
+                                            })
+                                        }
+                                    </div>
+                                    :
+                                    <div className={styles.noMatchMsg}>
+                                        <p>{NO_MATCH_MSG}</p>
+                                        <Link href={"/profile/edit"} className={styles.link}>Forgotten adding interests?</Link>
+                                    </div>
+                        }
+                    </div>
+                    :
+                    <div className={styles.matchBlock}>
+                        {
+                            match &&
+                            <UserArticle link={`/users/${match?._id}`} user={match} />
+                        }
+
+                    </div>
+            }
+        </div >
+    )
+}
+
+const AuthMatchPage = () => {
+    return (
+        <IsPrivate Component={MatchPage} />
+    )
+}
+
+export default AuthMatchPage

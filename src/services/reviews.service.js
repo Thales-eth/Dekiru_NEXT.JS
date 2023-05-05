@@ -3,16 +3,6 @@ import InitAxios from "./init.service";
 class ReviewService extends InitAxios {
     constructor() {
         super("review")
-
-        this.api.interceptors.request.use(config => {
-            const authToken = localStorage.getItem("authToken")
-
-            if (authToken) {
-                config.headers = { Authorization: `Bearer ${authToken}` }
-            }
-
-            return config
-        })
     }
 
     getUserReviews(user_id) {

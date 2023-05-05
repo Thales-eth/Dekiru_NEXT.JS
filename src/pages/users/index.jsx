@@ -4,6 +4,7 @@ import Map from '@/components/Map/Map'
 import { MAP_MSG } from '@/consts'
 import { AuthContext } from '@/contexts/auth.context'
 import { useContext, useEffect, useState } from 'react'
+import IsPrivate from '@/components/IsPrivate/IsPrivate'
 
 const UsersMap = () => {
     const [nearUsers, setNearUsers] = useState([])
@@ -31,4 +32,10 @@ const UsersMap = () => {
     )
 }
 
-export default UsersMap
+const AuthMap = () => {
+    return (
+        <IsPrivate Component={UsersMap} />
+    )
+}
+
+export default AuthMap

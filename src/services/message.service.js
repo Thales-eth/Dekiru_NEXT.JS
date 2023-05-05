@@ -3,16 +3,6 @@ import InitAxios from "./init.service";
 class MessageService extends InitAxios {
     constructor() {
         super("message")
-
-        this.api.interceptors.request.use(config => {
-            const authToken = localStorage.getItem("authToken")
-
-            if (authToken) {
-                config.headers = { Authorization: `Bearer ${authToken}` }
-            }
-
-            return config
-        })
     }
 
     getConversationMessages(conversation_id) {

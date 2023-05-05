@@ -9,7 +9,10 @@ const UserInfo = ({ user, ProfilePic }) => {
         <div className={styles.userInfo}>
             <div className={styles.me}>
                 <Image width={143} height={125} src={user.language === 'Spanish' ? SpainFlag : JapanFlag} className={styles.languageFlag} alt='spanishFlag' />
-                <Image width={400} height={600} src={ProfilePic} className={styles.profilePic} alt='profilePic' />
+                {
+                    ProfilePic &&
+                    <Image width={400} height={600} src={ProfilePic} className={styles.profilePic} alt='profilePic' />
+                }
             </div>
             <div className={styles.rating}><span>{getStars(user.score, 40)}</span></div>
         </div>

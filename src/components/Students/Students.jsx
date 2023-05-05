@@ -1,20 +1,8 @@
 import styles from './Students.module.css'
-import UserService from '../../services/user.service'
-import UserArticle from '../UserArticle/UserArticle'
-import Loader from '../Loader/Loader'
-import { useEffect, useState } from 'react'
+import UserArticle from '@/components/UserArticle/UserArticle'
+import Loader from '@/components/Loader/Loader'
 
-const Students = () => {
-    const [students, setStudents] = useState([])
-
-    useEffect(() => {
-        getStudents()
-    }, [])
-
-    async function getStudents() {
-        const users = await UserService.getHomePageStudents().then(({ data }) => data)
-        setStudents(users)
-    }
+const Students = ({ students }) => {
 
     return (
         <div className={styles.students}>

@@ -5,7 +5,22 @@ class InitAxios {
         this.api = axios.create({
             baseURL: `${process.env.NEXT_PUBLIC_API_URL}/${path}`
         })
+
+        this.api.interceptors.request.use(config => {
+            const noAuth = config.headers.noAuth
+
+            if (noAuth) return config
+
+            const authToken = localStorage.getItem("authToken")
+
+            if (authToken) {
+                config.headers = { Authorization: `Bearer ${authToken}` }
+            }
+
+            return config
+        })
     }
+
 }
 
 export default InitAxios

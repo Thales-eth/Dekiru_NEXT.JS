@@ -5,8 +5,6 @@ import Services from '@/components/Services/Services';
 import { getHomePageStudents } from '@/lib/api';
 
 const HomePage = ({ students }) => {
-  console.log("ANTES DE QUE SE CARGUE EL JS", students)
-
   return (
     <>
       <div className={styles.homePage}>

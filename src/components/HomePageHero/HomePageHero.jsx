@@ -1,7 +1,7 @@
 import styles from './HomePageHero.module.css'
 import Link from 'next/link'
-import { HOME_PAGE_BANNER_MOTTO, HOME_PAGE_BANNER_JAPANESE_TEXT, HOME_PAGE_BANNER_JAPANESE_SUBTEXT } from '../../consts/index'
-import { StylesContext } from '../../contexts/styles.context'
+import { HOME_PAGE_BANNER_MOTTO, HOME_PAGE_BANNER_JAPANESE_TEXT, HOME_PAGE_BANNER_JAPANESE_SUBTEXT } from '@/consts/index'
+import { StylesContext } from '@/contexts/styles.context'
 import { useContext } from 'react'
 
 const HomePageHero = () => {
